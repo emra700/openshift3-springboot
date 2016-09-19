@@ -60,12 +60,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
-                <version>2.3</version>
-                <configuration>
-                    <failOnMissingWebXml>false</failOnMissingWebXml>
-                    <outputDirectory>target</outputDirectory>
-                    <warName>ROOT</warName>
-                </configuration>
+                <version>3.0.0</version>
             </plugin>
         </plugins>
     </build>
