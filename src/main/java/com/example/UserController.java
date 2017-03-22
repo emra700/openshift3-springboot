@@ -18,24 +18,13 @@ import javax.validation.Valid;
 public class UserController {
     private static final Logger logger = LoggerFactory.getLogger(UserController.class);
 
-    @Autowired
-    private UserRepository userRepository;
 
-    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-    public ResponseEntity<User> get(@PathVariable long id) {
-        logger.info("GET was called on user " + id);
-        User user = userRepository.findOne(id);
-        if(user != null) {
-            return new ResponseEntity<>(user, HttpStatus.OK);
-        } else {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
+
+    @RequestMapping(value = "/", method = RequestMethod.GET)
+    public String get(@PathVariable long id) {
+        return "hello";
     }
 
-    @RequestMapping(method = RequestMethod.POST)
-    public ResponseEntity post(@RequestBody @Valid User user) {
-        userRepository.save(user);
-        return new ResponseEntity(HttpStatus.OK);
-    }
+
 
 }
